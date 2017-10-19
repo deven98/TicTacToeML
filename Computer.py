@@ -21,10 +21,12 @@ class Computer(object):
         while self.board.isWin() is 0:
             self.board.makeMove(randint(0,8))
 
-        # Only triggers if player 1 wins
+        # Triggers if someone wins. "Win" here is player 1 winning and "Loss" implies a player 2 win
         if self.board.isWin() is 1:
             if self.board.playerToMove is 2:
-                self.winList.append(self.board.moveList)
+                self.winList.append(self.board.moveList[:])
+            elif self.board.playerToMove is 1:
+                self.lossList.append(self.board.moveList[:])
 
         print(self.board.moveList)
 

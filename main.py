@@ -7,3 +7,4 @@ mainComputer = Computer(mainBoard)
 mainComputer.playGames(10)
 
 print(mainComputer.winList)
+print(mainComputer.lossList)
