@@ -2,6 +2,7 @@
 
 class Board(object):
 
+    # Initializes board, move list of the game and number of moves played in the game
     def __init__(self):
 
         self.board = [0,0,0,0,0,0,0,0,0]
@@ -9,11 +10,13 @@ class Board(object):
         self.movesPlayed = 0
         self.moveList = []
 
+    # Displays all elements in the board
     def displayBoard(self):
 
         for elements in self.board:
             print(elements)
 
+    # Makes a move on the tic tac toe board
     def makeMove(self,squareNumber):
 
         if self.squareIsEmpty(squareNumber):
@@ -27,6 +30,7 @@ class Board(object):
             else:
                 self.playerToMove = 1
 
+    # Checks if square is empty
     def squareIsEmpty(self,squareNumber):
 
         if self.board[squareNumber] is 0:
@@ -34,6 +38,7 @@ class Board(object):
         else:
             return 0
 
+    # Resets all values to their default states
     def resetBoard(self):
 
         self.playerToMove = 1
@@ -41,6 +46,7 @@ class Board(object):
         self.movesPlayed = 0
         self.moveList.clear()
 
+    # Checks the board for winning/losing or drawing conditions (returns 1 for win/loss and 2 for draw and 0 otherwise)
     def isWin(self):
 
         if (((self.board[0] == 1 and self.board[1] == 1 and self.board[2] == 1) or (
