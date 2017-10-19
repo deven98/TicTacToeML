@@ -7,6 +7,7 @@ class Board(object):
         self.board = [0,0,0,0,0,0,0,0,0]
         self.playerToMove = 1
         self.movesPlayed = 0
+        self.moveList = []
 
     def displayBoard(self):
 
@@ -19,6 +20,7 @@ class Board(object):
 
             self.board[squareNumber] = self.playerToMove
             self.movesPlayed = self.movesPlayed + 1
+            self.moveList.append(squareNumber)
 
             if self.playerToMove is 1:
                 self.playerToMove = 2
@@ -31,6 +33,13 @@ class Board(object):
             return 1
         else:
             return 0
+
+    def resetBoard(self):
+
+        self.playerToMove = 1
+        self.board = [0,0,0,0,0,0,0,0,0]
+        self.movesPlayed = 0
+        self.moveList.clear()
 
     def isWin(self):
 

@@ -1,12 +1,9 @@
 from Board import Board
+from Computer import Computer
 
-gameOne = Board()
+mainBoard = Board()
+mainComputer = Computer(mainBoard)
 
-gameOne.makeMove(1)
-gameOne.makeMove(1)
-gameOne.makeMove(1)
-gameOne.makeMove(1)
-gameOne.makeMove(0)
+mainComputer.playGames(10)
 
-gameOne.displayBoard()
-print(gameOne.isWin())
+print(mainComputer.winList)
