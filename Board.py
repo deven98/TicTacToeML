@@ -13,8 +13,17 @@ class Board(object):
     # Displays all elements in the board
     def displayBoard(self):
 
+        i = 0
+
         for elements in self.board:
-            print(elements)
+
+            if ((i is 2) or ( i is 5) or (i is 8)):
+                print(elements)
+
+            else:
+                print(elements,end=" ")
+
+            i = i + 1
 
     # Makes a move on the tic tac toe board
     def makeMove(self,squareNumber):

@@ -32,6 +32,17 @@ class Computer(object):
 
         self.board.resetBoard()
 
+    def makeMove(self, moveNumber, board):
+
+        commonList = []
+
+        for game in self.winList:
+            if game[:len(board.moveList)] == board.moveList:
+                commonList.append(game[moveNumber])
+
+        board.makeMove(self.most_common(commonList))
+
+    # Gives most common element out of a list
     def most_common(self,L):
         # get an iterable of (item, iterable) pairs
         SL = sorted((x, i) for i, x in enumerate(L))
