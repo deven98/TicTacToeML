@@ -32,14 +32,17 @@ class Computer(object):
 
         self.board.resetBoard()
 
+    # Makes a move against human player after getting a move that won the most in the same position
     def makeMove(self, moveNumber, board):
 
+        # List that contains all moves played at the position on the board
         commonList = []
 
         for game in self.winList:
             if game[:len(board.moveList)] == board.moveList:
                 commonList.append(game[moveNumber])
 
+        # Makes the move most played and won the most games in the randomised games against itself
         board.makeMove(self.most_common(commonList))
 
     # Gives most common element out of a list
