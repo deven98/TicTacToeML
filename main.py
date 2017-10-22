@@ -5,7 +5,7 @@ mainBoard = Board()
 mainComputer = Computer(mainBoard)
 
 # Computer saves data for n random games
-mainComputer.playGames(400000)
+mainComputer.playGames(1000000)
 
 # Start Human-Computer game here
 
